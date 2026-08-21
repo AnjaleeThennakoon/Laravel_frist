@@ -21,12 +21,7 @@
                 value="{{ old('email') }}"
                 required
             />
-
-            @error('email')
-                <p class="text-error text-sm">
-                    {{ $message }}
-                </p>
-            @enderror
+            <x-forms.error name="email" />
 
 
             <label class="label">
@@ -40,12 +35,7 @@
                 placeholder="Password"
                 required
             />
-
-            @error('password')
-                <p class="text-error text-sm">
-                    {{ $message }}
-                </p>
-            @enderror
+            <x-forms.error name="password" />
 
 
             <button type="submit" class="btn btn-neutral mt-4">

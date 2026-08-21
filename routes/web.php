@@ -5,9 +5,11 @@ use App\Http\Controllers\Auth\SessionsController;
 use App\Http\Controllers\IdeaController;
 use Illuminate\Support\Facades\Route;
 
-
+Route::get('/', function () {
+    return redirect('/login');
+});
 // Ideas
-Route::get('/ideas', [IdeaController::class, 'index'])->name('ideas.index');
+Route::get('/ideas', [IdeaController::class, 'index'])->name('ideas.index') ->middleware('auth');
 Route::get('/ideas/create', [IdeaController::class, 'create'])->name('ideas.create');
 Route::post('/ideas', [IdeaController::class, 'store'])->name('ideas.store');
 Route::get('/ideas/{idea}/edit', [IdeaController::class, 'edit'])->name('ideas.edit');

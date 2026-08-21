@@ -8,22 +8,50 @@
                 d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </div>
+
       <ul tabindex="0"
           class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-        <li><a href="/">Home</a></li>
+        <li><a href="/ideas">Home</a></li>
         <li><a href="/ideas/create">New Idea</a></li>
       </ul>
     </div>
+    <a class="btn btn-ghost text-xl">Idea</a>
   </div>
 
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
-      <li><a href="/ideas">Ideas</a></li>
+      <li><a href="/ideas">Home</a></li>
       <li><a href="/ideas/create">New Idea</a></li>
     </ul>
   </div>
 
-  <div class="navbar-end">
-    <a class="btn-primary " href="/register" class="btn">Register</a>
-  </div>
+  <div class="navbar-end space-x-2">
+
+        @guest
+
+            <a class="btn btn-primary" href="/register">
+                Register
+            </a>
+
+            <a class="btn btn-secondary" href="/login">
+                Log In
+            </a>
+
+        @endguest
+
+
+        @auth
+
+            <form method="POST" action="/logout">
+                @csrf
+                @method('DELETE')
+
+                <button type="submit" class="btn btn-ghost">
+                    Log Out
+                </button>
+            </form>
+
+        @endauth
+
+    </div>
 </div>

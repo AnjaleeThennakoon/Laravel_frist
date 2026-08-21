@@ -1,34 +1,13 @@
 <x-layout>
 
-    <form action="/register" method="POST">
+    <form action="/login" method="POST">
         @csrf
 
         <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 mx-auto">
 
             <legend class="fieldset-legend">
-                Register
+                Log In
             </legend>
-
-
-            <label class="label" for="name">
-                Name
-            </label>
-
-            <input
-                type="text"
-                name="name"
-                class="input"
-                placeholder="Your Name"
-                value="{{ old('name') }}"
-                required
-            />
-
-            @error('name')
-                <p class="text-error text-sm">
-                    {{ $message }}
-                </p>
-            @enderror
-
 
             <label class="label" for="email">
                 Email
@@ -38,7 +17,7 @@
                 type="email"
                 name="email"
                 class="input"
-                placeholder="Email"
+                placeholder="Your Email"
                 value="{{ old('email') }}"
                 required
             />
@@ -70,7 +49,7 @@
 
 
             <button type="submit" class="btn btn-neutral mt-4">
-                Register
+                Log In
             </button>
 
         </fieldset>

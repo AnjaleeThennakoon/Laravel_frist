@@ -44,9 +44,7 @@ class SessionsController extends Controller
         ])->onlyInput('email');
     }
 
-    /**
-     * Handle logout.
-     */
+   
     public function destroy(Request $request)
     {
         // Logout user

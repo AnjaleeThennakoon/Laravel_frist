@@ -15,7 +15,7 @@
                 <li><a href="/ideas/create" class="hover:text-blue-600">New Idea</a></li>
             </ul>
         </div>
-        <a href="/Login" class="btn btn-ghost text-xl text-blue-600 hover:text-blue-800">
+        <a href="/idea-card" class="btn btn-ghost text-xl text-blue-600 hover:text-blue-800">
             Idea
         </a>
     </div>

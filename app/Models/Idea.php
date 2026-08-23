@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Idea extends Model
 {
-    protected $fillable = ['description', 'state', 'user_id'];
+    protected $gurded = [];
 
-//    public static function create(array $array)
-//    {
-//    }
+    public  function create(array $array)
+    {
+    }
 }
 

@@ -38,6 +38,8 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+
+
         // Login user automatically
         Auth::login($user);
 

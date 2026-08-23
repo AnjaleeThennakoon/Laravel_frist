@@ -3,13 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Idea extends Model
 {
     protected $gurded = [];
 
-    public  function create(array $array)
+    public  function user(): BelongsTo
     {
+        return $this->belongsTo(User::class);
     }
 }
 

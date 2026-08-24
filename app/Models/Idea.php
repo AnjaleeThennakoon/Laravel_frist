@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Idea extends Model
 {
-    protected $gurded = [];
+    protected $guarded = [];
 
     public  function user(): BelongsTo
     {

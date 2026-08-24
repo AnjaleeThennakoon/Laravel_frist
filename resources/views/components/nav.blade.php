@@ -1,5 +1,5 @@
 <div class="navbar bg-base-200 shadow-md border-b border-gray-300">
-    <div class="navbar-start">
+    <div class="navbar-start" >
         <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
@@ -11,21 +11,27 @@
 
             <ul tabindex="0"
                 class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                <li><a href="/ideas" class="hover:text-blue-600">Home</a></li>
-                <li><a href="/ideas/create" class="hover:text-blue-600">New Idea</a></li>
+                <li><a href="/ideas" >Home</a></li>
+                <li><a href="/ideas/create" >New Idea</a></li>
+                @can('view-admin')
+
+                    <li><a href="/admin" >Admin</a></li>
+                @endcan
             </ul>
         </div>
-        <a href="/idea-card" class="btn btn-ghost text-xl text-blue-600 hover:text-blue-800">
+        <a href="/ideas" class="btn btn-ghost text-xl text-blue-600 hover:text-blue-800">
             Idea
         </a>
     </div>
 
-{{--    <div class="navbar-center hidden lg:flex">--}}
-{{--        <ul class="menu menu-horizontal px-1 text-gray-700 font-semibold">--}}
-{{--            <li><a href="/ideas" class="hover:text-blue-600">Home</a></li>--}}
-{{--            <li><a href="/ideas/create" class="hover:text-blue-600">New Idea</a></li>--}}
-{{--        </ul>--}}
-{{--    </div>--}}
+    <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1 text-gray-700 font-semibold">
+            <li><a href="/ideas" class="hover:text-blue-600">Home</a></li>
+            <li><a href="/ideas/create" class="hover:text-blue-600">New Idea</a></li>
+            <li><a href="/admin" >Admin</a></li>
+
+        </ul>
+    </div>
 
     <div class="navbar-end space-x-2">
         @guest

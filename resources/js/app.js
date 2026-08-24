@@ -1,3 +1,3 @@
 import './bootstrap';
 
-alert('hello ');
+alert('hello gys ');

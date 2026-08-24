@@ -47,11 +47,6 @@ class User extends Authenticatable
     }
 
 
-    /**
-     * Relationship: A user can have many ideas.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
     public function ideas(): HasMany
     {
         return $this->hasMany(Idea::class);

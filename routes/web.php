@@ -15,7 +15,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/ideas', [IdeaController::class, 'index'])->name('ideas.index');
     Route::get('/ideas/create', [IdeaController::class, 'create'])->name('ideas.create');
     Route::post('/ideas', [IdeaController::class, 'store'])->name('ideas.store');
-    Route::get('/ideas/{idea}/edit', [IdeaController::class, 'edit'])->name('ideas.edit');
+    Route::get('/ideas/{idea}/edit', [IdeaController::class, 'edit'])->name('ideas.edit')->can('update','idea');
     Route::get('/ideas/{idea}', [IdeaController::class, 'show'])->name('ideas.show');
     Route::patch('/ideas/{idea}', [IdeaController::class, 'update'])->name('ideas.update');
     Route::delete('/ideas/{idea}', [IdeaController::class, 'destroy'])->name('ideas.destroy');
@@ -33,13 +33,13 @@ Route::middleware('guest')->group(function () {
 });
 
 
-// Login
+// Login - admin view part 2
 Route::get('/login', [SessionsController::class, 'create'])-> name('login');
 Route::post('/login', [SessionsController::class, 'store']);
-
-Route::get('/admin',function () {
-    Gate::authorize('view-admin');
-    return 'Private admin only area';
-})->middleware('auth');
-
-
+//
+//Route::get('/admin',function () {
+//    Gate::authorize('view-admin');
+//    return 'Private admin only area';
+//})->middleware('auth');
+//
+//

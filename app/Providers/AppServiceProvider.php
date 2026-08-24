@@ -19,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
+    // admin view part 01
     public function boot(): void
     {
         Gate::define('view-admin', function (User $user) {

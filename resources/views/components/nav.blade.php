@@ -11,8 +11,10 @@
 
             <ul tabindex="0"
                 class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                <li><a href="/ideas" >Home</a></li>
-                <li><a href="/ideas/create" >New Idea</a></li>
+                @auth
+                    <li><a href="/ideas" >Home</a></li>
+                    <li><a href="/ideas/create" >New Idea</a></li>
+                @endauth
                 @can('view-admin')
                     <li><a href="/admin" >Admin</a></li>
                 @endcan
@@ -26,8 +28,10 @@
 
     <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1 text-gray-700 font-semibold">
-            <li><a href="/ideas" class="hover:text-blue-600">Home</a></li>
-            <li><a href="/ideas/create" class="hover:text-blue-600">New Idea</a></li>
+            @auth
+                <li><a href="/ideas" class="hover:text-blue-600">Home</a></li>
+                <li><a href="/ideas/create" class="hover:text-blue-600">New Idea</a></li>
+            @endauth
             @can('view-admin')
                 <li><a href="/admin" >Admin</a></li>
             @endcan

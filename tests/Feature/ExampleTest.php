@@ -1,7 +1,6 @@
 <?php
 
-test('the application returns a successful response', function () {
-    $response = $this->get('/');
+it('return a successful response', function () {
+    visit('/')->assertSee('welcome');
 
-    $response->assertStatus(200);
 });

@@ -69,7 +69,7 @@
             @enderror
 
 
-            <button type="submit" class="btn btn-neutral mt-4">
+            <button type="submit" class="btn btn-neutral mt-4" data-test="register-button">
                 Register
             </button>
 

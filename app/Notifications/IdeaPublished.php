@@ -12,14 +12,9 @@ class IdeaPublished extends Notification implements ShouldQueue
 {
     use Queueable;
 
-    /**
-     * Create a new notification instance.
-     */
-    public function __construct(Idea $idea)
-    {
-        $this->idea = $idea;
-    }
-
+    public function __construct(
+        public Idea $idea,
+    ) {}
 
     /**
      * Get the notification's delivery channels.

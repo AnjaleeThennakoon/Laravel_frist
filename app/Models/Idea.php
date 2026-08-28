@@ -9,6 +9,10 @@ class Idea extends Model
 {
     protected $guarded = [];
 
+    protected $attributes = [
+        'state' => 'Pending',
+    ];
+
     public  function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

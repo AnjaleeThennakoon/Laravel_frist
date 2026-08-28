@@ -47,7 +47,8 @@ class IdeaController extends Controller
 
         Auth::user()->notify(new IdeaPublished($idea));
 
-        return redirect('/ideas');
+        return redirect()->route('ideas.index')
+            ->with('success', 'Idea created successfully!');
 
     }
 

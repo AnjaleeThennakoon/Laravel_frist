@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Gate;
 
 Route::get('/', function () {
-    return redirect('/login');
-//    return 'placeholder for home page ';
+//    return redirect('/login');
+    return 'placeholder for home page ';
 });
 Route::middleware('auth')->group(function () {
     // Ideas
